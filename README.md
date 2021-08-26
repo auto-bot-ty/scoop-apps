@@ -8,3 +8,4 @@
 # 合并仓库列表
 
 - ygguorun/scoop-bucket
+- bobo2334/scoop-bucket
