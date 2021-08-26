@@ -1,0 +1,39 @@
+{
+    "version": "2.3.2",
+    "description": "Detection Script to help identify why your PC isn't Windows 11 ready",
+    "homepage": "https://github.com/rcmaehl/WhyNotWin11",
+    "license": "GNU Lesser General Public License v3.0",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/rcmaehl/WhyNotWin11/releases/download/2.3.2/WhyNotWin11_x86.exe#/WhyNotWin11.exe",
+            "hash": "b75d122ec2a98a73c58bc33b6564adfdc032f0f5959d95d601de101e3b410363"
+        },
+        "64bit": {
+            "url": "https://github.com/rcmaehl/WhyNotWin11/releases/download/2.3.2/WhyNotWin11.exe",
+            "hash": "09eb7ca262f414f6b1815af4fb409ddbbcc9dc83a172e66432e277501de417ae"
+        }
+    },
+    "shortcuts": [
+        [
+            "WhyNotWin11.exe",
+            "WhyNotWin11"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/rcmaehl/WhyNotWin11"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/rcmaehl/WhyNotWin11/releases/download/$version/WhyNotWin11_x86.exe#/WhyNotWin11.exe"
+            },
+            "64bit": {
+                "url": "https://github.com/rcmaehl/WhyNotWin11/releases/download/$version/WhyNotWin11.exe"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.sha256",
+            "regex": "$sha256.*$basename"
+        }
+    }
+}

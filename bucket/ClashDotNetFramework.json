@@ -1,0 +1,51 @@
+{
+    "version": "1.2.7",
+    "description": "A .NET Framework based GUI Proxy For Windows",
+    "homepage": "https://github.com/ClashDotNetFramework/ClashDotNetFramework",
+    "license": "Freeware",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.7/Clash.NET.1.2.7.x86.Setup.exe",
+            "hash": "7e0256e7aceb579d19bd992a5f2cb2b01c2af899eb0abc2ed5d90ffa62aa4f1d"
+        },
+        "64bit": {
+            "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.7/Clash.NET.1.2.7.x64.Setup.exe",
+            "hash": "23d4cb605c6953bbfdf77e82628a001608052c62ad1b690298826b35d338d2f8"
+        }
+    },
+    "installer": {
+        "args": [
+            "/currentuser",
+            "/verysilent",
+            "/nocancel",
+            "/norestart",
+            "/dir=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/verysilent",
+            "/nocancel",
+            "/norestart"
+        ]
+    },
+    "checkver": {
+        "github": "https://github.com/ClashDotNetFramework/ClashDotNetFramework"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v$version/Clash.NET.$version.x86.Setup.exe"
+            },
+            "64bit": {
+                "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v$version/Clash.NET.$version.x64.Setup.exe"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksum",
+            "regex": "$basename.*$sha256"
+        }
+    },
+    "notes": "Scoop doesn't persist your ClashDotNetFramework data, they are still storaged in '%HOMEDRIVE%%HOMEPATH%\\.config\\cdn'."
+}

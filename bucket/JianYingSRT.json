@@ -1,0 +1,26 @@
+{
+    "version": "1.6.0",
+    "description": "用于剪映中包含字幕信息的 Json 文件提取导出转换为 .srt 格式",
+    "homepage": "https://guihet.com/jianyingsrt.html",
+    "license": "Freeware",
+    "url": "https://raw.githubusercontent.com/zhuping96119/scoop-attachment/master/JianYingSRT-v1.6.0.zip",
+    "hash": "8d84e75129dfce6b79f97a7de5545e856ea39a3dab6c25e01f29f0e1db657463",
+    "extract_dir": "JianYingSRT",
+    "shortcuts": [
+        [
+            "JianYingSRT.exe",
+            "JianYingSRT"
+        ]
+    ],
+    "persist": [
+        "config.ini",
+        "image.config.ini"
+    ],
+    "checkver": {
+        "url": "https://guihet.com/?s=jianyingsrt",
+        "regex": "JianYingSRT.*?v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://raw.githubusercontent.com/zhuping96119/scoop-attachment/master/JianYingSRT-v$version.zip"
+    }
+}

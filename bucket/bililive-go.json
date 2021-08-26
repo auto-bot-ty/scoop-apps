@@ -1,0 +1,44 @@
+{
+    "version": "0.6.2",
+    "description": "一个直播录制工具",
+    "homepage": "https://github.com/hr3lxphr6j/bililive-go",
+    "license": "GNU General Public License v3.0",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/hr3lxphr6j/bililive-go/releases/download/v0.6.2/bililive-windows-386.zip",
+            "hash": "fad5d472c78ececac64075970058a11b7548217f2ca111dd2e6cabdfec7a6d20",
+            "bin": [
+                [
+                    "bililive-windows-386.exe",
+                    "bililive"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "https://github.com/hr3lxphr6j/bililive-go/releases/download/v0.6.2/bililive-windows-amd64.zip",
+            "hash": "a2179308fad2fcb5dea5f3d1fc3e275d61e1c9b7ad1034afb54207a9690e9f52",
+            "bin": [
+                [
+                    "bililive-windows-amd64.exe",
+                    "bililive"
+                ]
+            ]
+        }
+    },
+    "persist": "config.yml",
+    "checkver": {
+        "url": "https://api.github.com/repos/hr3lxphr6j/bililive-go/releases/latest",
+        "jp": "$.tag_name",
+        "regex": "v(.*)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/hr3lxphr6j/bililive-go/releases/download/v$version/bililive-windows-386.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/hr3lxphr6j/bililive-go/releases/download/v$version/bililive-windows-amd64.zip"
+            }
+        }
+    }
+}
