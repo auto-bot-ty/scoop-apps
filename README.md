@@ -10,3 +10,4 @@
 - ygguorun/scoop-bucket
 - bobo2334/scoop-bucket
 - FDUZS/spoon
+- chawyehsu/dorado

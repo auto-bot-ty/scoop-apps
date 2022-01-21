@@ -1,0 +1,44 @@
+{
+    "homepage": "https://github.com/siyuan-note/siyuan",
+    "description": "SiYuan is a Markdown Block-Reference and Bidirectional-Link note-taking application",
+    "version": "1.7.5",
+    "license": "Unknown",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/siyuan-note/siyuan/releases/download/v1.7.5/siyuan-1.7.5-win.exe#/siyuan.7z",
+            "hash": "6006aefd977745c0df9289c0398306e572f8d8efc0259685235f6f9454a48bb7",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\" -Recurse"
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/siyuan-note/siyuan/releases/download/v1.7.5/siyuan-1.7.5-win32.exe#/siyuan.7z",
+            "hash": "6a61cafc69612b7a7dbd6faa52c9b547907010b8d7faebd281ffcb407a92b047",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\" -Recurse"
+            ]
+        }
+    },
+    "shortcuts": [
+        [
+            "siyuan.exe",
+            "思源笔记"
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/siyuan-note/siyuan/releases/latest",
+        "regex": "/tree/v([\\d.]+(-[\\w.]+)?)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-win.exe#/siyuan.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-win32.exe#/siyuan.7z"
+            }
+        }
+    }
+}
