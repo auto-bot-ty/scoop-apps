@@ -1,10 +1,10 @@
 {
-    "version": "2.1.14",
-    "description": "API 文档、API 调试、API Mock、API 自动化测试",
-    "homepage": "https://www.apifox.cn",
-    "license": "Unknown",
-    "url": "http://cdn.apifox.cn/download/2.1.14/Apifox-2.1.14.exe#/dl.7z",
-    "hash": "sha512:c9a1c6be3cc3515cf39aa093dbc157d44be5c93336e26ea4a4fe4ec7d1c55b6a45f89cf6e1ce52795ca88baef85a9e608bae44622d3b1981eb27b400e9f05896",
+    "version": "1.2.2",
+    "description": "视频的裁剪,标记与搜索结合一体的软件",
+    "homepage": "https://github.com/hunmer/VideoManager",
+    "license": "Creative Commons Zero v1.0 Universal",
+    "url": "https://github.com/hunmer/VideoManager/releases/download/v1.2.2/videoManager.Setup.1.2.2.64bit.exe#/dl.7z",
+    "hash": "e54e07d6414a86e5a246e0fa4bc178f9b14b045a48202451b986d0989de03f43",
     "installer": {
         "script": [
             "# Expand-7zipArchive",
@@ -14,7 +14,7 @@
             "if (!(Test-Path $persist_dir)) {",
             "    New-Item $persist_dir -Type Directory -Force | Out-Null",
             "}",
-            "$runtimeCache = \"$env:APPDATA\\apifox\"",
+            "$runtimeCache = \"$env:APPDATA\\videoManager\"",
             "$runtimeCachePersist = \"$persist_dir\\appdata\"",
             "if (Test-Path $runtimeCachePersist) {",
             "    Remove-Item $runtimeCache -Force -Recurse -ErrorAction SilentlyContinue",
@@ -29,7 +29,7 @@
     },
     "uninstaller": {
         "script": [
-            "$runtimeCache = \"$env:APPDATA\\apifox\"",
+            "$runtimeCache = \"$env:APPDATA\\videoManager\"",
             "$runtimeCachePersist = \"$persist_dir\\appdata\"",
             "if (!(Test-Path $runtimeCachePersist)) {",
             "    Move-Item $runtimeCache $runtimeCachePersist -Force",
@@ -40,19 +40,12 @@
     },
     "shortcuts": [
         [
-            "Apifox.exe",
-            "Apifox"
+            "videoManager.exe",
+            "Video Manager"
         ]
     ],
-    "checkver": {
-        "url": "http://cdn.apifox.cn/download/latest.yml",
-        "regex": "Apifox-([\\d.]+).exe"
-    },
+    "checkver": "github",
     "autoupdate": {
-        "url": "http://cdn.apifox.cn/download/$version/Apifox-$version.exe#/dl.7z",
-        "hash": {
-            "url": "http://cdn.apifox.cn/download/latest.yml",
-            "regex": "sha512.*?$base64"
-        }
+        "url": "https://github.com/hunmer/VideoManager/releases/download/v$version/videoManager.Setup.$version.64bit.exe#/dl.7z"
     }
 }
