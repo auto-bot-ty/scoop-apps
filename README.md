@@ -7,8 +7,8 @@
 
 # 合并仓库列表
 
+- LstHeart/scoop-soft
 - ygguorun/scoop-bucket
 - bobo2334/scoop-bucket
 - FDUZS/spoon
 - TianXiaTech/scoop-txt
-- LstHeart/scoop-soft
