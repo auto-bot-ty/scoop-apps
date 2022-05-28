@@ -1,10 +1,10 @@
 {
     "homepage": "https://www.notion.so",
     "description": "The all-in-one workspace for your notes, tasks, wikis, and databases.",
-    "version": "2.0.21",
+    "version": "2.0.27",
     "license": "Proprietary",
-    "url": "https://desktop-release.notion-static.com/Notion%20Setup%202.0.21.exe#/dl.7z",
-    "hash": "sha512:0e0a289454415d5666d5a0114715b1fec7ced76fde77ba546e03309f6be53278c2555f35acf2aa964066815d5efc58b4c41dfcf6e1796415f83534373b21699e",
+    "url": "https://desktop-release.notion-static.com/Notion%20Setup%202.0.27.exe#/dl.7z",
+    "hash": "sha512:030e05cdd64ef0018f59dd5aea82216b78c35e3e349de894d8e614b1f6f2885737e6709a14b6883d37def6719be310162e629379008ad4cfec268ab0de7e2942",
     "extract_dir": "$PLUGINSDIR",
     "installer": {
         "script": [

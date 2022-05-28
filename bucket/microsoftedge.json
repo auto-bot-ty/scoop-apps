@@ -1,16 +1,16 @@
 {
     "homepage": "https://www.microsoft.com/en-us/edge",
     "description": "The chromium based Microsoft Edge browser",
-    "version": "97.0.1072.76",
+    "version": "90.0.818.66",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://dorado-api.deno.dev/edge?arch=64&channel=stable&dl#/MicrosoftEdge-97.0.1072.76-x64.7z",
-            "hash": "fd4bcff4c57bf9dcb91290601f6cc1f980d5e5e4e2d53c1fd1a0a5ced4b10069"
+            "url": "https://edge-dl.kidonng.workers.dev/https://api.shuax.com/v2/download/edge/stable/x64#/MicrosoftEdge-90.0.818.66-x86_x64.7z",
+            "hash": "1a05ac3058b3a784c0ffd4981ea159d9063e7216db7d3844f00dcef1e98c8206"
         },
         "32bit": {
-            "url": "https://dorado-api.deno.dev/edge?arch=86&channel=stable&dl#/MicrosoftEdge-97.0.1072.76-x86.7z",
-            "hash": "29985ea3151327e6e24710e12539051dc4535d4012b16a5ce81d83f860595388"
+            "url": "https://edge-dl.kidonng.workers.dev/https://api.shuax.com/v2/download/edge/stable/x86#/MicrosoftEdge-90.0.818.66-x86.7z",
+            "hash": "fc18bc0a30c004b698c9b5d1dcab3b44a3a0bda4b2968e405176451dd0b09d38"
         }
     },
     "installer": {
@@ -23,24 +23,16 @@
         ]
     ],
     "checkver": {
-        "url": "https://edgeupdates.microsoft.com/api/products",
-        "jsonpath": "$[?(@.Product == 'Stable')].Releases[?(@.Platform == 'Windows' && @.Architecture == 'x64')].ProductVersion"
+        "url": "https://scoop-services.azurewebsites.net/checkver?app=microsoftedge",
+        "jsonpath": "$.stable.x64.version"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dorado-api.deno.dev/edge?arch=64&channel=stable&dl#/MicrosoftEdge-$version-x64.7z",
-                "hash": {
-                    "url": "https://dorado-api.deno.dev/edge?arch=64&channel=stable",
-                    "jsonpath": "$.Hashes.Sha256"
-                }
+                "url": "https://edge-dl.kidonng.workers.dev/https://api.shuax.com/v2/download/edge/stable/x64#/MicrosoftEdge-$version-x86_x64.7z"
             },
             "32bit": {
-                "url": "https://dorado-api.deno.dev/edge?arch=86&channel=stable&dl#/MicrosoftEdge-$version-x86.7z",
-                "hash": {
-                    "url": "https://dorado-api.deno.dev/edge?arch=86&channel=stable",
-                    "jsonpath": "$.Hashes.Sha256"
-                }
+                "url": "https://edge-dl.kidonng.workers.dev/https://api.shuax.com/v2/download/edge/stable/x86#/MicrosoftEdge-$version-x86.7z"
             }
         }
     }

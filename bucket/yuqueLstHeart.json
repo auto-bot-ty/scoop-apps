@@ -25,7 +25,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://www.yuque.com/download",
+        "url": "https://www.yuque.com/install/desktop",
         "regex": "Yuque-([\\d.]+).exe"
     },
     "autoupdate": {

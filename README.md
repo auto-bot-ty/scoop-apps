@@ -11,3 +11,4 @@
 - bobo2334/scoop-bucket
 - FDUZS/spoon
 - TianXiaTech/scoop-txt
+- LstHeart/scoop-soft
