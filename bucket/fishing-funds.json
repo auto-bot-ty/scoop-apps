@@ -1,17 +1,20 @@
 {
-    "version": "4.13.1",
-    "description": "阿里云盘是一款速度快、不打扰、够安全、易于分享的网盘，由阿里巴巴集团出品",
-    "homepage": "https://www.aliyundrive.com/",
-    "license": "Unknown",
-    "url": "https://cdn.aliyundrive.net/downloads/apps/desktop/update/4.13.1/win32/ia32/aDrive-4.13.1.exe#/dl.7z",
-    "hash": "a57ecfcb06e4f6dcbb0d2ad11a0f8e88392364746894f34133ad084174974020",
+    "version": "8.2.3",
+    "description": "基金,大盘,股票,虚拟货币状态栏显示小应用,基于Electron开发,支持MacOS,Windows,Linux客户端,数据源来自天天基金,蚂蚁基金,爱基金,腾讯证券等",
+    "homepage": "https://github.com/1zilc/fishing-funds",
+    "license": "GPL-3.0 license",
+    "url": "https://github.com/1zilc/fishing-funds/releases/download/v8.2.3/Fishing-Funds-Setup-8.2.3.exe#/dl.7z",
+    "hash": "sha512:1b91e3d66698f371b12cf2a5ca654e2957aa8481b676f63a5f15208b64d52ce0120c2c123873ef711f80a88ad9b6b460c6fa2fbe9e0c7e3ac9eb7a6eda24d79c",
     "installer": {
         "script": [
+            "# Expand-7zipArchive",
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
+            "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse",
             "# handle runtime cache",
             "if (!(Test-Path $persist_dir)) {",
             "    New-Item $persist_dir -Type Directory -Force | Out-Null",
             "}",
-            "$runtimeCache = \"$env:APPDATA\\aDrive\"",
+            "$runtimeCache = \"$env:APPDATA\\Fishing Funds\"",
             "$runtimeCachePersist = \"$persist_dir\\appdata\"",
             "if (Test-Path $runtimeCachePersist) {",
             "    Remove-Item $runtimeCache -Force -Recurse -ErrorAction SilentlyContinue",
@@ -26,7 +29,7 @@
     },
     "uninstaller": {
         "script": [
-            "$runtimeCache = \"$env:APPDATA\\aDrive\"",
+            "$runtimeCache = \"$env:APPDATA\\Fishing Funds\"",
             "$runtimeCachePersist = \"$persist_dir\\appdata\"",
             "if (!(Test-Path $runtimeCachePersist)) {",
             "    Move-Item $runtimeCache $runtimeCachePersist -Force",
@@ -37,19 +40,16 @@
     },
     "shortcuts": [
         [
-            "aDrive.exe",
-            "阿里云盘"
+            "Fishing Funds.exe",
+            "Fishing Funds"
         ]
     ],
-    "post_install": [
-        "Remove-Item -Force -Recurse \"$dir\\`$PLUGINSDIR\"",
-        "Remove-Item -Force -Recurse \"$dir\\`$TEMP\""
-    ],
-    "checkver": {
-        "url": "https://www.aliyundrive.com/desktop/version/update.json",
-        "regex": "/([\\d.]+)"
-    },
+    "checkver": "github",
     "autoupdate": {
-        "url": "https://cdn.aliyundrive.net/downloads/apps/desktop/update/$version/win32/ia32/aDrive-$version.exe#/dl.7z"
+        "url": "https://github.com/1zilc/fishing-funds/releases/download/v$version/Fishing-Funds-Setup-$version.exe#/dl.7z",
+        "hash": {
+            "url": "https://github.com/1zilc/fishing-funds/releases/download/v$version/latest.yml",
+            "regex": "sha512.*?$base64"
+        }
     }
 }
